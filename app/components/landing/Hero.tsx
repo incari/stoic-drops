@@ -26,7 +26,9 @@ export const Hero = () => {
     <section className="w-full max-w-screen-lg m-auto">
       <div className="text-center py-10 px-4 flex flex-col">
         <div className="py-10">
-          <h1 className="py-3 text-6xl">Start Each Day with Timeless Wisdom</h1>
+          <h1 className="py-3 text-6xl font-bold">
+            Start Each Day with Timeless Wisdom
+          </h1>
           <p className="text-lg">
             Discover daily Stoic insights and actionable advice to transform
             your life.

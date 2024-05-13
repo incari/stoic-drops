@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
   content: [
@@ -47,6 +48,7 @@ const config: Config = {
         button: "4px 6px 0 0 rgba(0,0,0,0.6)",
         "button-hover": "6px 8px 0 0 rgba(0,0,0,0.6)",
         input: "3px 6px 0 rgba(0,0,0,1)",
+        deep: "10px 10px 20px rgba(0, 0, 0, 0.25)",
       },
     },
   },
