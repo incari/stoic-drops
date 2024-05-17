@@ -1,14 +1,4 @@
-const BENEFITS = [
-  { text: "Start your day focused and inspired with our actionable insights." },
-  { text: "Master stress management and enhance your decision-making skills." },
-  {
-    text: "Join a thriving community of like-minded individuals committed to personal growth.",
-  },
-  {
-    text: "Enjoy tailored content that aligns with your unique goals and interests.",
-  },
-  { text: "Customize your experience with configurable language options." },
-];
+import { useTranslation } from "react-i18next";
 
 const BenefitsItem = ({ text }: { text: string }) => {
   return (
@@ -32,11 +22,21 @@ const BenefitsItem = ({ text }: { text: string }) => {
 };
 
 export const BenefitsSection = () => {
+  const { t } = useTranslation();
+
+  const BENEFITS = [
+    { text: t("why_subscribe.benefits.benefit1") },
+    { text: t("why_subscribe.benefits.benefit2") },
+    { text: t("why_subscribe.benefits.benefit3") },
+    { text: t("why_subscribe.benefits.benefit4") },
+    { text: t("why_subscribe.benefits.benefit5") },
+  ];
+
   return (
     <div className="bg-white py-12">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-          Why Subscribe to Our Daily Stoic Newsletter?
+          {t("why_subscribe.title")}
         </h2>
         <ul className="space-y-4 max-w-3xl mx-auto text-lg text-gray-600">
           {BENEFITS.map(({ text }) => (

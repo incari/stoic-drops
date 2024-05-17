@@ -1,23 +1,30 @@
+import { useTranslation } from "react-i18next";
+
 export const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-gray-900 text-white p-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <h2 className="text-lg font-semibold">About Us</h2>
+          <h2 className="text-lg font-semibold">
+            {t("footer.about_us_title")}
+          </h2>
           <p className="mt-4 text-gray-400">
-            We provide daily Stoic insights and actionable advice to help you
-            live a better life.
+            {t("footer.about_us_description")}
           </p>
         </div>
         <div>
-          <h2 className="text-lg font-semibold">Quick Links</h2>
+          <h2 className="text-lg font-semibold">
+            {t("footer.quick_links_title")}
+          </h2>
           <ul className="mt-4 space-y-2">
             <li>
               <a
                 href="#"
                 className="text-gray-400 hover:text-white transition"
               >
-                Blog
+                {t("footer.quick_links.item1")}
               </a>
             </li>
             <li>
@@ -25,7 +32,7 @@ export const Footer = () => {
                 href="#"
                 className="text-gray-400 hover:text-white transition"
               >
-                Contact Us
+                {t("footer.quick_links.item2")}
               </a>
             </li>
             <li>
@@ -33,32 +40,34 @@ export const Footer = () => {
                 href="#"
                 className="text-gray-400 hover:text-white transition"
               >
-                Privacy Policy
+                {t("footer.quick_links.item3")}
               </a>
             </li>
           </ul>
         </div>
         <div>
-          <h2 className="text-lg font-semibold">Follow Us</h2>
+          <h2 className="text-lg font-semibold">
+            {t("footer.follow_us_title")}
+          </h2>
           <div className="mt-4">
             <a
               href="#"
               className="text-gray-400 hover:text-white transition"
             >
-              Facebook
+              {t("footer.social_media.facebook")}
             </a>
             <span className="mx-2">|</span>
             <a
               href="#"
               className="text-gray-400 hover:text-white transition"
             >
-              Twitter
+              {t("footer.social_media.twitter")}
             </a>
           </div>
         </div>
       </div>
       <div className="mt-8 text-center text-gray-400">
-        © 2024 Stoic Drops. All rights reserved.
+        {t("footer.copyright")}
       </div>
     </footer>
   );

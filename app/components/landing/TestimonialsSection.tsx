@@ -1,43 +1,42 @@
-const testimonials = [
-  {
-    id: 1,
-    name: "John Doe",
-    quote:
-      "This newsletter has not only educated me on Stoicism but has also made it relevant to my everyday challenges.",
-    position: "Product Manager",
-  },
-  {
-    id: 2,
-    name: "Jane Smith",
-    quote:
-      "I've noticed a significant improvement in how I handle work stress since I started reading the daily quotes.",
-    position: "Entrepreneur",
-  },
-  {
-    id: 3,
-    name: "Alice Johnson",
-    quote:
-      "The daily insights have helped me remain calm and focused, even in the most hectic times.",
-    position: "Freelance Writer",
-  },
-  {
-    id: 4,
-    name: "Michael Brown",
-    quote:
-      "Stoicism taught me how to separate what I can control from what I cannot, improving my overall happiness.",
-    position: "Software Developer",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export const TestimonialsSection = () => {
+  const { t } = useTranslation();
+
+  const TESTIMONIALS = [
+    {
+      id: 1,
+      quote: t("testimonials.testimonial1.quote"),
+      name: t("testimonials.testimonial1.name"),
+      title: t("testimonials.testimonial1.title"),
+    },
+    {
+      id: 2,
+      quote: t("testimonials.testimonial2.quote"),
+      name: t("testimonials.testimonial2.name"),
+      title: t("testimonials.testimonial2.title"),
+    },
+    {
+      id: 3,
+      quote: t("testimonials.testimonial3.quote"),
+      name: t("testimonials.testimonial3.name"),
+      title: t("testimonials.testimonial3.title"),
+    },
+    {
+      id: 4,
+      quote: t("testimonials.testimonial4.quote"),
+      name: t("testimonials.testimonial4.name"),
+      title: t("testimonials.testimonial4.title"),
+    },
+  ];
   return (
     <div className="bg-white py-12">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-          Hear From Our Subscribers
+          {t("testimonials.title")}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial) => (
+          {TESTIMONIALS.map((testimonial) => (
             <div
               key={testimonial.id}
               className="flex flex-col items-center text-center p-4 shadow-md rounded-lg"
@@ -46,7 +45,7 @@ export const TestimonialsSection = () => {
               <p className="text-gray-900 font-semibold mt-4">
                 {testimonial.name}
               </p>
-              <p className="text-gray-500">{testimonial.position}</p>
+              <p className="text-gray-500">{testimonial.title}</p>
             </div>
           ))}
         </div>

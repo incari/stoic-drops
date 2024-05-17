@@ -1,9 +1,10 @@
 "use client";
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 export const PatternInterruption: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
-
+  const { t } = useTranslation();
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -35,11 +36,10 @@ export const PatternInterruption: React.FC = () => {
       className="text-center py-12 px-4"
     >
       <h2 className="text-3xl font-bold text-gray-800 mb-4">
-        Did you know that 90% of leaders use Stoic principles to make better
-        decisions?
+        {t("why_subscribe.leader_insight")}
       </h2>
       <p className="text-gray-600 text-xl">
-        Explore how Stoicism can elevate your decision-making skills.
+        {t("why_subscribe.stoicism_benefit")}
       </p>
     </div>
   );
