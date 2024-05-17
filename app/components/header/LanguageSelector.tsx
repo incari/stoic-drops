@@ -1,44 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MdTranslate } from "react-icons/md";
+import { useTranslation } from "react-i18next";
+import { other30Languages, top10Languages } from "../../constants/languages";
 
-const top10Languages = [
-  { label: "English", code: "en" },
-  { label: "Spanish", code: "es" },
-  { label: "Chinese", code: "zh" },
-  { label: "Hindi", code: "hi" },
-  { label: "Arabic", code: "ar" },
-  { label: "Portuguese", code: "pt" },
-  { label: "Bengali", code: "bn" },
-  { label: "Russian", code: "ru" },
-  { label: "Japanese", code: "ja" },
-  { label: "Punjabi", code: "pa" },
-];
+const LanguageSelector: React.FC = () => {
+  const { t, i18n } = useTranslation();
+  const [selectedLanguage, setSelectedLanguage] = useState<string>(
+    i18n.language || top10Languages[0].code
+  );
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [isOtherSelected, setIsOtherSelected] = useState<boolean>(false);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
 
-const other30Languages = [
-  { label: "French", code: "fr" },
-  { label: "German", code: "de" },
-  { label: "Javanese", code: "jv" },
-  { label: "Korean", code: "ko" },
-  { label: "Telugu", code: "te" },
-  { label: "Tamil", code: "ta" },
-  { label: "Vietnamese", code: "vi" },
-  { label: "Italian", code: "it" },
-  { label: "Turkish", code: "tr" },
-  { label: "Urdu", code: "ur" },
-  // ... add the remaining languages
-];
+  useEffect(() => {
+    setIsMounted(true);
+    i18n.changeLanguage(selectedLanguage);
+  }, [selectedLanguage, i18n]);
 
-export const LanguageSelector: React.FC = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState(
-    top10Languages[0].code
-  ); // Default to the first language
-  const [searchQuery, setSearchQuery] = useState("");
-  const [isOtherSelected, setIsOtherSelected] = useState(false);
-
-  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const value = e.target.value;
-    if (value !== "other") {
-      setSelectedLanguage(value);
+  const handleLanguageChange = (language: string) => {
+    if (language !== "other") {
+      setSelectedLanguage(language);
       setIsOtherSelected(false);
     } else {
       setIsOtherSelected(true);
@@ -49,45 +30,41 @@ export const LanguageSelector: React.FC = () => {
     setSearchQuery(e.target.value);
   };
 
-  const handleLanguageSelect = (language: string) => {
-    setSelectedLanguage(language);
-    setSearchQuery("");
-    setIsOtherSelected(false);
-  };
-
   const filteredLanguages = other30Languages.filter((language) =>
     language.label.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const selectedLanguageLabel =
     top10Languages.find((language) => language.code === selectedLanguage)
-      ?.label || "Select Language";
+      ?.label ||
+    other30Languages.find((language) => language.code === selectedLanguage)
+      ?.label ||
+    t("select_language");
 
   return (
     <div className="relative ml-4">
       <div className="flex items-center border border-gray-300 rounded-md px-3 py-2">
         <MdTranslate className="mr-2 text-gray-800" />
-
         <select
-          value={selectedLanguage}
-          onChange={handleLanguageChange}
-          className=""
+          value={isMounted ? selectedLanguage : ""}
+          onChange={(e) => handleLanguageChange(e.target.value)}
+          className="border-none outline-none bg-transparent"
         >
-          <option
-            value=""
-            disabled
-          >
-            {selectedLanguageLabel}
-          </option>
-          {top10Languages.map((language) => (
-            <option
-              key={language.code}
-              value={language.code}
-            >
-              {language.label}
-            </option>
-          ))}
-          <option value="other">Other</option>
+          {!isMounted ? (
+            <option>{selectedLanguageLabel}</option>
+          ) : (
+            <>
+              {top10Languages.map((language) => (
+                <option
+                  key={language.code}
+                  value={language.code}
+                >
+                  {language.label}
+                </option>
+              ))}
+              <option value="other">{t("other")}</option>
+            </>
+          )}
         </select>
       </div>
       {isOtherSelected && (
@@ -97,14 +74,14 @@ export const LanguageSelector: React.FC = () => {
               type="text"
               value={searchQuery}
               onChange={handleSearchChange}
-              placeholder="Search language..."
+              placeholder={t("search_language")}
               className="w-full border border-gray-300 rounded-md px-3 py-1 mb-2"
             />
             <ul className="max-h-40 overflow-y-auto">
               {filteredLanguages.map((language) => (
                 <li
                   key={language.code}
-                  onClick={() => handleLanguageSelect(language.code)}
+                  onClick={() => handleLanguageChange(language.code)}
                   className="px-3 py-1 cursor-pointer hover:bg-gray-100"
                 >
                   {language.label}
@@ -117,3 +94,5 @@ export const LanguageSelector: React.FC = () => {
     </div>
   );
 };
+
+export { LanguageSelector };

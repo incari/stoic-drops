@@ -1,3 +1,8 @@
+"use client";
+
+import i18n from "../i18n";
+import { I18nextProvider } from "react-i18next";
+import Head from "next/head";
 import { Header } from "./components/header/Header";
 import { BenefitsSection } from "./components/landing/Benefits";
 import { CallToAction } from "./components/landing/CallToAction";
@@ -6,7 +11,6 @@ import { Hero } from "./components/landing/Hero";
 import { PatternInterruption } from "./components/landing/PatternInterruption";
 import { SampleIssue } from "./components/landing/SampleIssue";
 import { TestimonialsSection } from "./components/landing/TestimonialsSection";
-import Head from "next/head";
 
 export default function HomePage() {
   return (
@@ -14,15 +18,17 @@ export default function HomePage() {
       <Head>
         <title>Stoic Drops</title>
       </Head>
-      <Header />
+      <I18nextProvider i18n={i18n}>
+        <Header />
 
-      <Hero />
-      <BenefitsSection />
-      <PatternInterruption />
-      <SampleIssue />
-      <TestimonialsSection />
-      <CallToAction />
-      <Footer />
+        <Hero />
+        <BenefitsSection />
+        <PatternInterruption />
+        <SampleIssue />
+        <TestimonialsSection />
+        <CallToAction />
+        <Footer />
+      </I18nextProvider>
     </main>
   );
 }

@@ -1,10 +1,12 @@
 "use client";
 import { eventNames } from "process";
 import { FormEvent, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export const Hero = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const { t } = useTranslation();
 
   const validateEmail = (email: string) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -48,7 +50,7 @@ export const Hero = () => {
       <div className="text-center py-10 px-4 flex flex-col">
         <div className="py-10">
           <h1 className="py-3 text-6xl font-bold">
-            Start Each Day with Timeless Wisdom
+            {t("title", "Loading...")}
           </h1>
           <p className="text-lg">
             Discover daily Stoic insights and actionable advice to transform
