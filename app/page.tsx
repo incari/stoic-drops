@@ -1,6 +1,7 @@
-import { Header } from "./components/Header";
+import { Header } from "./components/header/Header";
 import { BenefitsSection } from "./components/landing/Benefits";
 import { CallToAction } from "./components/landing/CallToAction";
+import { Footer } from "./components/landing/Footer";
 import { Hero } from "./components/landing/Hero";
 import { PatternInterruption } from "./components/landing/PatternInterruption";
 import { SampleIssue } from "./components/landing/SampleIssue";
@@ -14,12 +15,14 @@ export default function HomePage() {
         <title>Stoic Drops</title>
       </Head>
       <Header />
+
       <Hero />
       <BenefitsSection />
       <PatternInterruption />
       <SampleIssue />
       <TestimonialsSection />
       <CallToAction />
+      <Footer />
     </main>
   );
 }

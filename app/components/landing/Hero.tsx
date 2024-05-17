@@ -1,4 +1,5 @@
 "use client";
+import { eventNames } from "process";
 import { FormEvent, useState } from "react";
 
 export const Hero = () => {
@@ -9,18 +10,38 @@ export const Hero = () => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
+    console.log("submiting");
     if (validateEmail(email)) {
       setError("");
-    } else {
-      setError("Invalid email format");
+
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        console.log("Subscription successful!");
+      } else {
+        console.error("Failed to subscribe");
+      }
     }
   };
 
   const handleChange = (value: string) => {
     setEmail(value);
     setError("");
+  };
+
+  const handleGetContacts = async () => {
+    event?.preventDefault();
+    const response = await fetch("/api/subscribe");
+
+    console.log(response.json());
   };
   return (
     <section className="w-full max-w-screen-lg m-auto">
@@ -63,6 +84,13 @@ export const Hero = () => {
           <p className="text-xs text-gray-500 dark:text-gray-400">
             Join our community and receive daily Stoic insights.
           </p>
+          <button
+            type="button"
+            onClick={handleGetContacts}
+            className="p-5 border-4 border-black shadow-button hover:shadow-button-hover hover:-translate-y-0.5"
+          >
+            Get contacts
+          </button>
         </div>
       </div>
     </section>

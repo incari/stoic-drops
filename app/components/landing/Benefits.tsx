@@ -1,12 +1,15 @@
 const BENEFITS = [
-  { text: "Start your day focused and inspired." },
-  { text: "Gain practical tools for stress management and decision-making." },
+  { text: "Start your day focused and inspired with our actionable insights." },
+  { text: "Master stress management and enhance your decision-making skills." },
   {
-    text: "Join a community of like-minded individuals seeking personal growth.",
+    text: "Join a thriving community of like-minded individuals committed to personal growth.",
   },
-  { text: "Tailored ..." },
-  { text: "Configurable language" },
+  {
+    text: "Enjoy tailored content that aligns with your unique goals and interests.",
+  },
+  { text: "Customize your experience with configurable language options." },
 ];
+
 const BenefitsItem = ({ text }: { text: string }) => {
   return (
     <li className="flex items-start">

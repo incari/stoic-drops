@@ -1,6 +1,6 @@
 export const SampleIssue = () => {
   return (
-    <div className="bg-gray-100 py-12">
+    <div className="bg-slate-100 py-12">
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
           Preview a Sample Newsletter

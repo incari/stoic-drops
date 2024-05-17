@@ -1,8 +1,9 @@
 "use client";
 import Link from "next/link";
-import type React from "react";
-import { useState } from "react";
-import { Logo } from "./images/logo";
+import React, { useState } from "react";
+import { Logo } from "../images/logo";
+//import Navigation from "./Navigation";
+import { LanguageSelector } from "./LanguageSelector";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -62,46 +63,8 @@ const Header: React.FC = () => {
           </button>
         </div>
 
-        <nav
-          className={`${
-            isMenuOpen ? "flex" : "hidden absolute"
-          } flex-col top-full left-0 py-4 md:static md:flex md:flex-row md:space-x-4`}
-        >
-          <ul className="space-y-2 md:space-y-0 md:flex md:space-x-4">
-            <li>
-              <Link
-                href="/"
-                className="text-gray-600 hover:text-gray-500 transition-colors block px-4 py-2 md:p-0"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/about"
-                className="text-gray-600 hover:text-gray-500 transition-colors block px-4 py-2 md:p-0"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/subscribe"
-                className="text-gray-600 hover:text-gray-500 transition-colors block px-4 py-2 md:p-0"
-              >
-                Subscribe
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/contact"
-                className="text-gray-600 hover:text-gray-500 transition-colors block px-4 py-2 md:p-0"
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        {/*   <Navigation isMenuOpen={isMenuOpen} /> */}
+        <LanguageSelector />
       </div>
     </header>
   );
