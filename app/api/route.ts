@@ -1,13 +1,12 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import { NextResponse } from "next/server";
-
+import { NextRequest, NextResponse } from "next/server";
 import sgMail from "@sendgrid/mail";
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY || "");
 
 export async function GET() {
-  return NextResponse.json({ hello: "worlkd" });
+  return NextResponse.json({ hello: "world" });
 }
+
 /* 
       const msg = {
         to: email,
@@ -19,19 +18,30 @@ export async function GET() {
 
       await sgMail.send(msg);
  */
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
+
+export async function POST(req: NextRequest) {
   console.log("testing backend");
 
   if (req.method === "POST") {
     try {
-      const { email } = req.body;
+      const { email } = await req.json();
 
       if (!email) {
-        return res.status(400).json({ error: "Email is required" });
+        return NextResponse.json(
+          { error: "Email is required" },
+          { status: 400 }
+        );
       }
+
+      // Add your email sending logic here
     } catch (error) {
       console.error("Error sending email:", error);
+      return NextResponse.json(
+        { error: "Internal Server Error" },
+        { status: 500 }
+      );
     }
   } else {
+    return NextResponse.json({ error: "Method Not Allowed" }, { status: 405 });
   }
 }
