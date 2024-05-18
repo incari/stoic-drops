@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "title": "用永恒的智慧开始每一天",
+    "subtitle": "发现每日的斯多葛见解和可操作的建议来改变你的生活。",
+    "email": "maurelius@meditations.rome",
+    "subscribe_now": "立即订阅 - 免费",
+    "join_community": "加入我们的社区，接收每日斯多葛见解。"
+  },
+  "why_subscribe": {
+    "title": "为什么订阅我们的每日斯多葛通讯？",
+    "benefits": {
+      "benefit1": "用我们的可操作见解开始你的一天，充满专注和启发。",
+      "benefit2": "掌握压力管理，提高你的决策能力。",
+      "benefit3": "加入一个志同道合、致力于个人成长的社区。",
+      "benefit4": "享受与您独特目标和兴趣相符的定制内容。",
+      "benefit5": "通过可配置的语言选项定制您的体验。"
+    },
+    "leader_insight": "你知道吗？90%的领导者使用斯多葛原则做出更好的决策。",
+    "stoicism_benefit": "探索斯多葛主义如何提升你的决策能力。"
+  },
+  "example": {
+    "preview_title": "预览一份样本通讯",
+    "quote_title": "今日斯多葛名言",
+    "quote": "“害怕死亡的人永远不会做出任何值得一个活着的人做的事。” — 塞内加",
+    "insight_title": "见解",
+    "insight": "塞内加的这句话提醒我们，不要因对不可避免的恐惧而被束缚，要尽情地过好每一天。每一天都是做出有意义贡献、面对恐惧并超越它们的机会。",
+    "advice_title": "可操作的建议",
+    "advice": "今天，花点时间反思一下哪些恐惧可能阻碍了你实现目标。确定一个小步骤，去面对并克服其中一个恐惧。"
+  },
+  "testimonials": {
+    "title": "听听我们的订阅者怎么说",
+    "testimonial1": {
+      "quote": "这份通讯不仅让我了解了斯多葛主义，还使其与我的日常挑战相关联。",
+      "name": "约翰·多伊",
+      "title": "产品经理"
+    },
+    "testimonial2": {
+      "quote": "自从我开始阅读每日名言以来，我处理工作压力的方式有了显著改善。",
+      "name": "简·史密斯",
+      "title": "企业家"
+    },
+    "testimonial3": {
+      "quote": "每日见解帮助我在最忙碌的时候保持冷静和专注。",
+      "name": "爱丽丝·约翰逊",
+      "title": "自由作家"
+    },
+    "testimonial4": {
+      "quote": "斯多葛主义教会了我如何区分可以控制和不可控制的事，提高了我的整体幸福感。",
+      "name": "迈克尔·布朗",
+      "title": "软件开发员"
+    }
+  },
+  "call_to_action": {
+    "title": "准备好迎接每日智慧了吗？",
+    "description": "加入成千上万已经接收每日见解并采取可操作步骤以实现个人成长的人群。",
+    "subscribe_now": "立即订阅"
+  },
+  "footer": {
+    "about_us_title": "关于我们",
+    "about_us_description": "我们每天提供斯多葛见解和可操作的建议，帮助你过上更好的生活。",
+    "quick_links_title": "快速链接",
+    "quick_links": {
+      "item1": "博客",
+      "item2": "联系我们",
+      "item3": "隐私政策"
+    },
+    "follow_us_title": "关注我们",
+    "social_media": {
+      "facebook": "Facebook",
+      "twitter": "Twitter"
+    },
+    "copyright": "© 2024 Stoic Drops. 保留所有权利。"
+  }
+}

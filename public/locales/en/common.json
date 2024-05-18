@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "title": "Start Each Day with Timeless Wisdom",
+    "subtitle": "Discover daily Stoic insights and actionable advice to transform your life.",
+    "email": "maurelius@meditations.rome",
+    "subscribe_now": "Subscribe Now — It's Free",
+    "join_community": "Join our community and receive daily Stoic insights."
+  },
+  "why_subscribe": {
+    "title": "Why Subscribe to Our Daily Stoic Newsletter?",
+    "benefits": {
+      "benefit1": "Start your day focused and inspired with our actionable insights.",
+      "benefit2": "Master stress management and enhance your decision-making skills.",
+      "benefit3": "Join a thriving community of like-minded individuals committed to personal growth.",
+      "benefit4": "Enjoy tailored content that aligns with your unique goals and interests.",
+      "benefit5": "Customize your experience with configurable language options."
+    },
+    "leader_insight": "Did you know that 90% of leaders use Stoic principles to make better decisions?",
+    "stoicism_benefit": "Explore how Stoicism can elevate your decision-making skills."
+  },
+  "example": {
+    "preview_title": "Preview a Sample Newsletter",
+    "quote_title": "Today's Stoic Quote",
+    "quote": "\"He who fears death will never do anything worth of a man who is alive.\" — Seneca",
+    "insight_title": "Insight",
+    "insight": "This quote from Seneca reminds us of the importance of living our lives to the fullest and not being held back by the fear of the inevitable. Each day is an opportunity to make meaningful contributions, face our fears, and grow beyond them.",
+    "advice_title": "Actionable Advice",
+    "advice": "Today, take a moment to reflect on what fears might be holding you back from achieving your goals. Identify one small step you can take to confront and overcome one of those fears."
+  },
+
+  "testimonials": {
+    "title": "Hear From Our Subscribers",
+    "testimonial1": {
+      "quote": "This newsletter has not only educated me on Stoicism but has also made it relevant to my everyday challenges.",
+      "name": "John Doe",
+      "title": "Product Manager"
+    },
+    "testimonial2": {
+      "quote": "I've noticed a significant improvement in how I handle work stress since I started reading the daily quotes.",
+      "name": "Jane Smith",
+      "title": "Entrepreneur"
+    },
+    "testimonial3": {
+      "quote": "The daily insights have helped me remain calm and focused, even in the most hectic times.",
+      "name": "Alice Johnson",
+      "title": "Freelance Writer"
+    },
+    "testimonial4": {
+      "quote": "Stoicism taught me how to separate what I can control from what I cannot, improving my overall happiness.",
+      "name": "Michael Brown",
+      "title": "Software Developer"
+    }
+  },
+  "call_to_action": {
+    "title": "Ready to Embrace Daily Wisdom?",
+    "description": "Join thousands who are already receiving daily insights and taking actionable steps towards personal growth.",
+    "subscribe_now": "Subscribe Now"
+  },
+  "footer": {
+    "about_us_title": "About Us",
+    "about_us_description": "We provide daily Stoic insights and actionable advice to help you live a better life.",
+    "quick_links_title": "Quick Links",
+    "quick_links": {
+      "item1": "Blog",
+      "item2": "Contact Us",
+      "item3": "Privacy Policy"
+    },
+    "follow_us_title": "Follow Us",
+    "social_media": {
+      "facebook": "Facebook",
+      "twitter": "Twitter"
+    },
+    "copyright": "© 2024 Stoic Drops. All rights reserved."
+  }
+}

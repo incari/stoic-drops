@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "title": "Beginnen Sie jeden Tag mit zeitloser Weisheit",
+    "subtitle": "Entdecken Sie tägliche stoische Einsichten und umsetzbare Ratschläge, um Ihr Leben zu verändern.",
+    "email": "maurelius@meditations.rome",
+    "subscribe_now": "Jetzt abonnieren – kostenlos",
+    "join_community": "Treten Sie unserer Gemeinschaft bei und erhalten Sie tägliche stoische Einsichten."
+  },
+  "why_subscribe": {
+    "title": "Warum unseren täglichen stoischen Newsletter abonnieren?",
+    "benefits": {
+      "benefit1": "Beginnen Sie Ihren Tag fokussiert und inspiriert mit unseren umsetzbaren Einsichten.",
+      "benefit2": "Meistern Sie das Stressmanagement und verbessern Sie Ihre Entscheidungsfähigkeiten.",
+      "benefit3": "Treten Sie einer florierenden Gemeinschaft von Gleichgesinnten bei, die sich dem persönlichen Wachstum verschrieben haben.",
+      "benefit4": "Genießen Sie maßgeschneiderte Inhalte, die mit Ihren einzigartigen Zielen und Interessen übereinstimmen.",
+      "benefit5": "Passen Sie Ihr Erlebnis mit konfigurierbaren Sprachoptionen an."
+    },
+    "leader_insight": "Wussten Sie, dass 90% der Führungskräfte stoische Prinzipien verwenden, um bessere Entscheidungen zu treffen?",
+    "stoicism_benefit": "Erforschen Sie, wie der Stoizismus Ihre Entscheidungsfähigkeiten verbessern kann."
+  },
+  "example": {
+    "preview_title": "Eine Beispiel-Newsletter Vorschau",
+    "quote_title": "Das heutige stoische Zitat",
+    "quote": "\"Wer den Tod fürchtet, wird niemals etwas tun, was eines lebenden Menschen würdig ist.\" — Seneca",
+    "insight_title": "Einsicht",
+    "insight": "Dieses Zitat von Seneca erinnert uns daran, unser Leben in vollen Zügen zu leben und uns nicht von der Angst vor dem Unvermeidlichen zurückhalten zu lassen. Jeder Tag ist eine Gelegenheit, sinnvolle Beiträge zu leisten, unsere Ängste zu konfrontieren und über sie hinauszuwachsen.",
+    "advice_title": "Umsetzbarer Rat",
+    "advice": "Nehmen Sie sich heute einen Moment Zeit, um darüber nachzudenken, welche Ängste Sie daran hindern könnten, Ihre Ziele zu erreichen. Identifizieren Sie einen kleinen Schritt, den Sie unternehmen können, um eine dieser Ängste zu konfrontieren und zu überwinden."
+  },
+  "testimonials": {
+    "title": "Hören Sie von unseren Abonnenten",
+    "testimonial1": {
+      "quote": "Dieser Newsletter hat mich nicht nur über den Stoizismus informiert, sondern ihn auch für meine täglichen Herausforderungen relevant gemacht.",
+      "name": "John Doe",
+      "title": "Produktmanager"
+    },
+    "testimonial2": {
+      "quote": "Seit ich angefangen habe, die täglichen Zitate zu lesen, hat sich meine Art, mit Arbeitsstress umzugehen, erheblich verbessert.",
+      "name": "Jane Smith",
+      "title": "Unternehmerin"
+    },
+    "testimonial3": {
+      "quote": "Die täglichen Einsichten haben mir geholfen, auch in den hektischsten Zeiten ruhig und fokussiert zu bleiben.",
+      "name": "Alice Johnson",
+      "title": "Freiberufliche Schriftstellerin"
+    },
+    "testimonial4": {
+      "quote": "Der Stoizismus hat mir beigebracht, was ich kontrollieren kann und was nicht, und hat mein allgemeines Glück verbessert.",
+      "name": "Michael Brown",
+      "title": "Softwareentwickler"
+    }
+  },
+  "call_to_action": {
+    "title": "Bereit, tägliche Weisheit zu empfangen?",
+    "description": "Schließen Sie sich Tausenden an, die bereits tägliche Einsichten erhalten und konkrete Schritte zur persönlichen Entwicklung unternehmen.",
+    "subscribe_now": "Jetzt abonnieren"
+  },
+  "footer": {
+    "about_us_title": "Über uns",
+    "about_us_description": "Wir bieten tägliche stoische Einsichten und umsetzbare Ratschläge, um Ihnen zu helfen, ein besseres Leben zu führen.",
+    "quick_links_title": "Schnellzugriff",
+    "quick_links": {
+      "item1": "Blog",
+      "item2": "Kontaktieren Sie uns",
+      "item3": "Datenschutz-Bestimmungen"
+    },
+    "follow_us_title": "Folgen Sie uns",
+    "social_media": {
+      "facebook": "Facebook",
+      "twitter": "Twitter"
+    },
+    "copyright": "© 2024 Stoic Drops. Alle Rechte vorbehalten."
+  }
+}

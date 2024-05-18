@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
 const BenefitsItem = ({ text }: { text: string }) => {
   return (
@@ -22,7 +22,7 @@ const BenefitsItem = ({ text }: { text: string }) => {
 };
 
 export const BenefitsSection = () => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   const BENEFITS = [
     { text: t("why_subscribe.benefits.benefit1") },

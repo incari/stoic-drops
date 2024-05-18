@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "title": "Comienza cada día con sabiduría eterna",
+    "subtitle": "Descubre ideas estoicas diarias y consejos prácticos para transformar tu vida.",
+    "email": "maurelius@meditations.rome",
+    "subscribe_now": "Suscríbete Ahora — Es Gratis",
+    "join_community": "Únete a nuestra comunidad y recibe ideas estoicas diarias."
+  },
+  "why_subscribe": {
+    "title": "¿Por Qué Suscribirse a Nuestro Boletín Estoico Diario?",
+    "benefits": {
+      "benefit1": "Comienza tu día enfocado e inspirado con nuestros consejos prácticos.",
+      "benefit2": "Domina la gestión del estrés y mejora tus habilidades para tomar decisiones.",
+      "benefit3": "Únete a una comunidad próspera de personas afines comprometidas con el crecimiento personal.",
+      "benefit4": "Disfruta de contenido personalizado que se alinea con tus objetivos e intereses únicos.",
+      "benefit5": "Personaliza tu experiencia con opciones de idioma configurables."
+    },
+    "leader_insight": "¿Sabías que el 90% de los líderes utilizan principios estoicos para tomar mejores decisiones?",
+    "stoicism_benefit": "Explora cómo el estoicismo puede mejorar tus habilidades para tomar decisiones."
+  },
+  "example": {
+    "preview_title": "Vista Previa de un Boletín",
+    "quote_title": "Cita Estoica de Hoy",
+    "quote": "\"El que teme a la muerte nunca hará nada digno de un hombre que está vivo.\" — Séneca",
+    "insight_title": "Perspectiva",
+    "insight": "Esta cita de Séneca nos recuerda la importancia de vivir nuestras vidas al máximo y no dejarnos detener por el miedo a lo inevitable. Cada día es una oportunidad para hacer contribuciones significativas, enfrentar nuestros miedos y superarlos.",
+    "advice_title": "Consejo Práctico",
+    "advice": "Hoy, tómate un momento para reflexionar sobre qué miedos pueden estar deteniéndote para alcanzar tus objetivos. Identifica un pequeño paso que puedas dar para confrontar y superar uno de esos miedos."
+  },
+  "testimonials": {
+    "title": "Escucha a Nuestros Suscriptores",
+    "testimonial1": {
+      "quote": "Este boletín no solo me ha educado sobre el estoicismo, sino que también lo ha hecho relevante para mis desafíos cotidianos.",
+      "name": "John Doe",
+      "title": "Gerente de Producto"
+    },
+    "testimonial2": {
+      "quote": "He notado una mejora significativa en cómo manejo el estrés laboral desde que empecé a leer las citas diarias.",
+      "name": "Jane Smith",
+      "title": "Emprendedora"
+    },
+    "testimonial3": {
+      "quote": "Las ideas diarias me han ayudado a mantenerme calmada y enfocada, incluso en los momentos más agitados.",
+      "name": "Alice Johnson",
+      "title": "Escritora Freelance"
+    },
+    "testimonial4": {
+      "quote": "El estoicismo me enseñó a separar lo que puedo controlar de lo que no, mejorando mi felicidad general.",
+      "name": "Michael Brown",
+      "title": "Desarrollador de Software"
+    }
+  },
+  "call_to_action": {
+    "title": "¿Listo para Abrazar la Sabiduría Diaria?",
+    "description": "Únete a miles que ya reciben ideas diarias y toman medidas prácticas hacia el crecimiento personal.",
+    "subscribe_now": "Suscríbete Ahora"
+  },
+  "footer": {
+    "about_us_title": "Sobre Nosotros",
+    "about_us_description": "Ofrecemos ideas estoicas diarias y consejos prácticos para ayudarte a vivir una vida mejor.",
+    "quick_links_title": "Enlaces Rápidos",
+    "quick_links": {
+      "item1": "Blog",
+      "item2": "Contáctanos",
+      "item3": "Política de Privacidad"
+    },
+    "follow_us_title": "Síguenos",
+    "social_media": {
+      "facebook": "Facebook",
+      "twitter": "Twitter"
+    },
+    "copyright": "© 2024 Stoic Drops. Todos los derechos reservados."
+  }
+}

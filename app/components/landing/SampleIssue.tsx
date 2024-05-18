@@ -1,7 +1,7 @@
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
 export const SampleIssue = () => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <div className="bg-slate-100 py-12">

@@ -1,7 +1,7 @@
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
 export const TestimonialsSection = () => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   const TESTIMONIALS = [
     {

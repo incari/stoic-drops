@@ -1,12 +1,12 @@
 "use client";
 import { eventNames } from "process";
 import { FormEvent, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
 export const Hero = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   const validateEmail = (email: string) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);

@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
 export const PatternInterruption: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const { t } = useTranslation();
+  const t = useTranslations();
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {

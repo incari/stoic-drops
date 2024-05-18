@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "title": "Inizia ogni giorno con saggezza senza tempo",
+    "subtitle": "Scopri intuizioni stoiche quotidiane e consigli pratici per trasformare la tua vita.",
+    "email": "maurelius@meditations.rome",
+    "subscribe_now": "Iscriviti ora - È gratuito",
+    "join_community": "Unisciti alla nostra comunità e ricevi intuizioni stoiche quotidiane."
+  },
+  "why_subscribe": {
+    "title": "Perché iscriversi alla nostra newsletter quotidiana stoica?",
+    "benefits": {
+      "benefit1": "Inizia la tua giornata concentrato e ispirato con le nostre intuizioni pratiche.",
+      "benefit2": "Padroneggia la gestione dello stress e migliora le tue capacità decisionali.",
+      "benefit3": "Unisciti a una comunità fiorente di persone che la pensano allo stesso modo e sono impegnate nella crescita personale.",
+      "benefit4": "Goditi contenuti su misura che si allineano ai tuoi obiettivi e interessi unici.",
+      "benefit5": "Personalizza la tua esperienza con opzioni linguistiche configurabili."
+    },
+    "leader_insight": "Sapevi che il 90% dei leader utilizza i principi stoici per prendere decisioni migliori?",
+    "stoicism_benefit": "Scopri come lo stoicismo può migliorare le tue capacità decisionali."
+  },
+  "example": {
+    "preview_title": "Anteprima di una newsletter di esempio",
+    "quote_title": "La citazione stoica di oggi",
+    "quote": "\"Chi teme la morte non farà mai nulla degno di un uomo vivo.\" — Seneca",
+    "insight_title": "Intuizione",
+    "insight": "Questa citazione di Seneca ci ricorda l'importanza di vivere appieno la nostra vita e di non lasciarci trattenere dalla paura dell'inevitabile. Ogni giorno è un'opportunità per fare contributi significativi, affrontare le nostre paure e superarle.",
+    "advice_title": "Consiglio pratico",
+    "advice": "Oggi, prenditi un momento per riflettere su quali paure potrebbero impedirti di raggiungere i tuoi obiettivi. Identifica un piccolo passo che puoi fare per affrontare e superare una di queste paure."
+  },
+  "testimonials": {
+    "title": "Testimonianze dei nostri abbonati",
+    "testimonial1": {
+      "quote": "Questa newsletter non solo mi ha istruito sullo stoicismo, ma l'ha anche reso rilevante per le mie sfide quotidiane.",
+      "name": "John Doe",
+      "title": "Product Manager"
+    },
+    "testimonial2": {
+      "quote": "Ho notato un miglioramento significativo nel modo in cui gestisco lo stress lavorativo da quando ho iniziato a leggere le citazioni quotidiane.",
+      "name": "Jane Smith",
+      "title": "Imprenditrice"
+    },
+    "testimonial3": {
+      "quote": "Le intuizioni quotidiane mi hanno aiutato a rimanere calmo e concentrato, anche nei momenti più frenetici.",
+      "name": "Alice Johnson",
+      "title": "Scrittrice freelance"
+    },
+    "testimonial4": {
+      "quote": "Lo stoicismo mi ha insegnato a separare ciò che posso controllare da ciò che non posso, migliorando la mia felicità complessiva.",
+      "name": "Michael Brown",
+      "title": "Sviluppatore software"
+    }
+  },
+  "call_to_action": {
+    "title": "Pronto ad abbracciare la saggezza quotidiana?",
+    "description": "Unisciti a migliaia di persone che già ricevono intuizioni quotidiane e prendono misure concrete verso la crescita personale.",
+    "subscribe_now": "Iscriviti ora"
+  },
+  "footer": {
+    "about_us_title": "Chi siamo",
+    "about_us_description": "Forniamo intuizioni stoiche quotidiane e consigli pratici per aiutarti a vivere una vita migliore.",
+    "quick_links_title": "Link veloci",
+    "quick_links": {
+      "item1": "Blog",
+      "item2": "Contattaci",
+      "item3": "Politica sulla privacy"
+    },
+    "follow_us_title": "Seguici",
+    "social_media": {
+      "facebook": "Facebook",
+      "twitter": "Twitter"
+    },
+    "copyright": "© 2024 Stoic Drops. Tutti i diritti riservati."
+  }
+}

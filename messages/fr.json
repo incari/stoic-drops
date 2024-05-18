@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "title": "Commencez chaque jour avec une sagesse intemporelle",
+    "subtitle": "Découvrez des insights stoïques quotidiens et des conseils pratiques pour transformer votre vie.",
+    "email": "maurelius@meditations.rome",
+    "subscribe_now": "Abonnez-vous maintenant - C'est gratuit",
+    "join_community": "Rejoignez notre communauté et recevez des insights stoïques quotidiens."
+  },
+  "why_subscribe": {
+    "title": "Pourquoi s'abonner à notre newsletter stoïque quotidienne ?",
+    "benefits": {
+      "benefit1": "Commencez votre journée concentré et inspiré avec nos insights pratiques.",
+      "benefit2": "Maîtrisez la gestion du stress et améliorez vos compétences en prise de décision.",
+      "benefit3": "Rejoignez une communauté florissante d'individus partageant les mêmes idées et engagés dans la croissance personnelle.",
+      "benefit4": "Profitez de contenus personnalisés qui correspondent à vos objectifs et intérêts uniques.",
+      "benefit5": "Personnalisez votre expérience avec des options de langue configurables."
+    },
+    "leader_insight": "Saviez-vous que 90 % des leaders utilisent les principes stoïques pour prendre de meilleures décisions ?",
+    "stoicism_benefit": "Découvrez comment le stoïcisme peut améliorer vos compétences en prise de décision."
+  },
+  "example": {
+    "preview_title": "Aperçu d'un exemple de newsletter",
+    "quote_title": "La citation stoïque du jour",
+    "quote": "\"Celui qui craint la mort ne fera jamais rien digne d'un homme vivant.\" — Sénèque",
+    "insight_title": "Insight",
+    "insight": "Cette citation de Sénèque nous rappelle l'importance de vivre pleinement notre vie et de ne pas être retenu par la peur de l'inévitable. Chaque jour est une opportunité de faire des contributions significatives, de faire face à nos peurs et de les surmonter.",
+    "advice_title": "Conseil pratique",
+    "advice": "Aujourd'hui, prenez un moment pour réfléchir aux peurs qui pourraient vous empêcher d'atteindre vos objectifs. Identifiez une petite étape que vous pouvez franchir pour confronter et surmonter l'une de ces peurs."
+  },
+  "testimonials": {
+    "title": "Témoignages de nos abonnés",
+    "testimonial1": {
+      "quote": "Cette newsletter m'a non seulement éduqué sur le stoïcisme, mais l'a également rendu pertinent pour mes défis quotidiens.",
+      "name": "John Doe",
+      "title": "Chef de produit"
+    },
+    "testimonial2": {
+      "quote": "J'ai remarqué une amélioration significative dans ma gestion du stress au travail depuis que j'ai commencé à lire les citations quotidiennes.",
+      "name": "Jane Smith",
+      "title": "Entrepreneuse"
+    },
+    "testimonial3": {
+      "quote": "Les insights quotidiens m'ont aidé à rester calme et concentré, même dans les moments les plus agités.",
+      "name": "Alice Johnson",
+      "title": "Écrivaine freelance"
+    },
+    "testimonial4": {
+      "quote": "Le stoïcisme m'a appris à séparer ce que je peux contrôler de ce que je ne peux pas, améliorant ainsi mon bonheur général.",
+      "name": "Michael Brown",
+      "title": "Développeur logiciel"
+    }
+  },
+  "call_to_action": {
+    "title": "Prêt à embrasser la sagesse quotidienne ?",
+    "description": "Rejoignez des milliers de personnes qui reçoivent déjà des insights quotidiens et prennent des mesures concrètes vers la croissance personnelle.",
+    "subscribe_now": "Abonnez-vous maintenant"
+  },
+  "footer": {
+    "about_us_title": "À propos de nous",
+    "about_us_description": "Nous fournissons des insights stoïques quotidiens et des conseils pratiques pour vous aider à vivre une vie meilleure.",
+    "quick_links_title": "Liens rapides",
+    "quick_links": {
+      "item1": "Blog",
+      "item2": "Nous contacter",
+      "item3": "Politique de confidentialité"
+    },
+    "follow_us_title": "Suivez-nous",
+    "social_media": {
+      "facebook": "Facebook",
+      "twitter": "Twitter"
+    },
+    "copyright": "© 2024 Stoic Drops. Tous droits réservés."
+  }
+}
