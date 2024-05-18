@@ -1,3 +1,26 @@
+const locales = [
+  "en",
+  "es",
+  "zk",
+  "de",
+  "fr",
+  "it",
+  "hi",
+  "ja",
+  "ar",
+  "ru",
+  "pt",
+  "pa",
+  "jv",
+  "ko",
+  "te",
+  "ta",
+  "vi",
+  "tr",
+  "bn",
+  "ur",
+];
+
 const top10Languages = [
   { label: "English", code: "en" },
   { label: "Español", code: "es" },
@@ -25,4 +48,4 @@ const other30Languages = [
   // ... add the remaining languages
 ];
 
-export { top10Languages, other30Languages };
+export { top10Languages, other30Languages, locales };
