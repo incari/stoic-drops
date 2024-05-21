@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
-import { quote, translationPrompt } from "../../utils/chatgpt/prompts";
-import { Model } from "openai/resources/models.mjs";
+import { quote } from "../../utils/chatgpt/prompts";
 import { ChatModel } from "openai/resources/index.mjs";
 
 const model: ChatModel = "gpt-3.5-turbo";

@@ -15,16 +15,4 @@ Always reply in JSON format, otherwise return null
 `;
 };
 
-const translationPrompt = (lang: string, response: string) => `
-Only respond with a plain json format, nothing else.
-
-Translate the following English text to ${lang}: ${response}
-    {
-      title:"...",
-      author:"...",
-      quote:"...",
-      insight: "...",
-      advice:"...",
-    } 
-  `;
-export { quote, translationPrompt };
+export { quote };
