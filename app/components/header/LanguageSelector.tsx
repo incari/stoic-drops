@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useTransition, ChangeEvent } from "react";
 import { MdTranslate } from "react-icons/md";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import { LanguageDropdown } from "./LanguageDropdown";
 import { OtherLanguageInput } from "./OtherLanguageInput";
 import { top10Languages } from "../../constants/languages";
 
 const LanguageSelector: React.FC = () => {
-  const t = useTranslations();
   const [selectedLanguage, setSelectedLanguage] = useState<string>(
     top10Languages[0].code
   );

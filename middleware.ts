@@ -5,11 +5,12 @@ export default createMiddleware({
   // A list of all locales that are supported
   locales: locales,
 
+  localeDetection: false,
   // Used when no locale matches
   defaultLocale: "en",
 });
 
 export const config = {
   // Match any internationalized pathnames
-  matcher: ["/", "/:locale([a-z]{2,})/:path*"],
+  matcher: ["/", "/:locale([a-z]{2})/:path*"],
 };

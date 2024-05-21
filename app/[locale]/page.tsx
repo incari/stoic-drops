@@ -4,7 +4,7 @@ import { Header } from "../components/header/Header";
 import { BenefitsSection } from "../components/landing/Benefits";
 import { Hero } from "../components/landing/Hero";
 import { PatternInterruption } from "../components/landing/PatternInterruption";
-import { SampleIssue } from "../components/landing/SampleIssue";
+import { MultipleIssues } from "../components/landing/MultipleIssues";
 import { TestimonialsSection } from "../components/landing/TestimonialsSection";
 import { CallToAction } from "../components/landing/CallToAction";
 import { Footer } from "../components/landing/Footer";
@@ -19,7 +19,7 @@ export default function Home() {
       <Hero />
       <BenefitsSection />
       <PatternInterruption />
-      <SampleIssue />
+      <MultipleIssues />
       <TestimonialsSection />
       <CallToAction />
       <Footer />

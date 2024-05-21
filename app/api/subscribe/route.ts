@@ -1,42 +1,37 @@
-import sgMail from "@sendgrid/mail";
-import sgClient from "@sendgrid/client";
-import { NextResponse } from "next/server";
+import { createClient } from "@libsql/client";
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY || "");
-sgClient.setApiKey(process.env.SENDGRID_API_KEY || "");
-
-export async function GET() {
-  try {
-    await sgClient.request({
-      method: "GET",
-      url: "/v3/marketing/contacts",
-    });
-
-    return NextResponse.json({ message: "Email sent successfully!" });
-  } catch (error) {}
-}
+const config = {
+  url: process.env.TURSO_DATABASE_URL || "",
+  authToken: process.env.TURSO_AUTH_TOKEN || "",
+};
 
 export async function POST(req: Request) {
+  const db = createClient(config);
+
   try {
-    const { email } = await req.json();
-    console.log("email", email);
+    if (req.method === "POST") {
+      const { email } = await req.json();
+      console.log(email);
+      if (!email) {
+        return new Response(JSON.stringify({ error: "Email is required" }), {
+          status: 400,
+        });
+      }
 
-    if (!email) {
-      return Response.json({ error: "Email is required" });
+      await db.execute({
+        sql: "INSERT INTO Customers (Email) VALUES (?)",
+        args: [email],
+      });
+
+      return Response.json({
+        message: "You have successfully subscribed with your email!",
+      });
     }
-
-    const msg = {
-      to: email,
-      from: "ing.racana@gmail.com",
-      subject: "Subscription Confirmation",
-      text: "You have successfully subscribed to our newsletter!",
-      html: "<strong>You have successfully subscribed to our newsletter!</strong>",
-    };
-
-    await sgMail.send(msg);
-
-    return Response.json({ message: "Email sent successfully!" });
-  } catch (error) {
-    return Response.json({ message: error });
+  } catch (error: any) {
+    return new Response(JSON.stringify({ error: error.message }), {
+      status: 501,
+    });
   }
+
+  return new Response(null, { status: 405 });
 }

@@ -21,7 +21,8 @@
   "example": {
     "preview_title": "Aperçu d'un exemple de newsletter",
     "quote_title": "La citation stoïque du jour",
-    "quote": "\"Celui qui craint la mort ne fera jamais rien digne d'un homme vivant.\" — Sénèque",
+    "quote": "\"Celui qui craint la mort ne fera jamais rien digne d'un homme vivant.\"",
+    "author": "Sénèque",
     "insight_title": "Insight",
     "insight": "Cette citation de Sénèque nous rappelle l'importance de vivre pleinement notre vie et de ne pas être retenu par la peur de l'inévitable. Chaque jour est une opportunité de faire des contributions significatives, de faire face à nos peurs et de les surmonter.",
     "advice_title": "Conseil pratique",

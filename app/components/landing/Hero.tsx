@@ -13,23 +13,32 @@ export const Hero = () => {
   };
 
   const handleSubmit = async (event: FormEvent) => {
+    // TODO Give feedback to user when loading
+
     event.preventDefault();
-    console.log("submiting");
+
     if (validateEmail(email)) {
       setError("");
+      try {
+        const response = await fetch("/api/subscribe", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        });
 
-      const response = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      if (response.ok) {
-        console.log("Subscription successful!");
-      } else {
-        console.error("Failed to subscribe");
+        if (response.ok) {
+          const res = await response.json();
+          console.log(res.message);
+          // TODO Give feedback to user when success
+        } else {
+          const res = await response.json();
+          throw new Error(res.error);
+        }
+      } catch (error: any) {
+        // TODO Give feedback to user fail
+        console.log("My error", error);
       }
     }
   };
@@ -39,12 +48,6 @@ export const Hero = () => {
     setError("");
   };
 
-  const handleGetContacts = async () => {
-    event?.preventDefault();
-    const response = await fetch("/api/subscribe");
-
-    console.log(response.json());
-  };
   return (
     <section className="w-full max-w-screen-lg m-auto">
       <div className="text-center py-10 px-4 flex flex-col">

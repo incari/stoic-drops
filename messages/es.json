@@ -21,7 +21,8 @@
   "example": {
     "preview_title": "Vista Previa de un Boletín",
     "quote_title": "Cita Estoica de Hoy",
-    "quote": "\"El que teme a la muerte nunca hará nada digno de un hombre que está vivo.\" — Séneca",
+    "quote": "\"El que teme a la muerte nunca hará nada digno de un hombre que está vivo.\"",
+    "author": "Seneca",
     "insight_title": "Perspectiva",
     "insight": "Esta cita de Séneca nos recuerda la importancia de vivir nuestras vidas al máximo y no dejarnos detener por el miedo a lo inevitable. Cada día es una oportunidad para hacer contribuciones significativas, enfrentar nuestros miedos y superarlos.",
     "advice_title": "Consejo Práctico",

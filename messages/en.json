@@ -21,7 +21,8 @@
   "example": {
     "preview_title": "Preview a Sample Newsletter",
     "quote_title": "Today's Stoic Quote",
-    "quote": "\"He who fears death will never do anything worth of a man who is alive.\" — Seneca",
+    "quote": "\"He who fears death will never do anything worth of a man who is alive.\"",
+    "author": "Seneca",
     "insight_title": "Insight",
     "insight": "This quote from Seneca reminds us of the importance of living our lives to the fullest and not being held back by the fear of the inevitable. Each day is an opportunity to make meaningful contributions, face our fears, and grow beyond them.",
     "advice_title": "Actionable Advice",

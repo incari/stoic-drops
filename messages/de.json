@@ -21,7 +21,8 @@
   "example": {
     "preview_title": "Eine Beispiel-Newsletter Vorschau",
     "quote_title": "Das heutige stoische Zitat",
-    "quote": "\"Wer den Tod fürchtet, wird niemals etwas tun, was eines lebenden Menschen würdig ist.\" — Seneca",
+    "quote": "\"Wer den Tod fürchtet, wird niemals etwas tun, was eines lebenden Menschen würdig ist.\"",
+    "author": "Seneca",
     "insight_title": "Einsicht",
     "insight": "Dieses Zitat von Seneca erinnert uns daran, unser Leben in vollen Zügen zu leben und uns nicht von der Angst vor dem Unvermeidlichen zurückhalten zu lassen. Jeder Tag ist eine Gelegenheit, sinnvolle Beiträge zu leisten, unsere Ängste zu konfrontieren und über sie hinauszuwachsen.",
     "advice_title": "Umsetzbarer Rat",
