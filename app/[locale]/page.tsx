@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main>
       <Head>
-        <title>Stoic Drops</title>
+        <title>✨ Stoic Drops</title>
       </Head>
       <Header />
       <Hero />
