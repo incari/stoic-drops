@@ -9,7 +9,8 @@ sgClient.setApiKey(process.env.SENDGRID_API_KEY || "");
 
 export async function GET() {
   try {
-    const contacts = await sgClient.request({
+    //TODO fix types
+    const contacts: any = await sgClient.request({
       method: "GET",
       url: "/v3/marketing/contacts",
     });
