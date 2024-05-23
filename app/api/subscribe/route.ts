@@ -11,7 +11,6 @@ export async function POST(req: Request) {
   try {
     if (req.method === "POST") {
       const { email } = await req.json();
-      console.log(email);
       if (!email) {
         return new Response(JSON.stringify({ error: "Email is required" }), {
           status: 400,

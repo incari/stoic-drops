@@ -1,19 +1,7 @@
-//home page
+export const dynamic = "force-dynamic"; // static by default, unless reading the request
 
-import { NextResponse } from "next/server";
-
-export async function GET() {
-  return NextResponse.json({ hello: "home page" });
+export function GET(request: Request) {
+  return new Response(`Hello from ${process.env.VERCEL_REGION}`);
 }
 
-// usage
-
-/*  
- const handleTry = async () => {
-    console.log("probando click");
-
-    const test = await fetch("/api");
-    const data = await test.json();
-    console.log();
-  }; 
-  */
+export const runtime = "nodejs";
