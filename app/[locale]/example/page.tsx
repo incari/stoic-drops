@@ -1,6 +1,5 @@
 // pages/newsletter.tsx
 
-import { useLocale } from "next-intl";
 import { createEmail } from "../../api/chat-gpt/create-email";
 import {
   Newsletter,
@@ -8,11 +7,9 @@ import {
 } from "../../components/email-templates/basic";
 
 async function Page() {
-  const language = useLocale();
-  //const language = "de";
+  const language = "de";
   const content = await createEmail({ language });
 
-  //console.log("content!!", content);
   return (
     <NewsletterPage
       content={content}
