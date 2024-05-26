@@ -1,14 +1,12 @@
 import sendgrid from "@sendgrid/mail";
-import {
-  Newsletter,
-  renderNewsletter,
-} from "../../components/email-templates/basic";
+import { renderNewsletter } from "../../components/email-templates/newsletter";
 import { createEmail } from "../chat-gpt/create-email";
+import { Newsletter } from "../../components/email-templates/generic";
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY || "");
 
 export async function sendEmails(emails: string[]): Promise<void> {
-  const content: Newsletter = await createEmail({ language: "de" });
+  const content: Newsletter = await createEmail({ language: "es" });
 
   for (const email of emails) {
     const message = {

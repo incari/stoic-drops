@@ -1,12 +1,4 @@
-type Section = {
-  title: string;
-  content: string;
-};
-
-export type Newsletter = {
-  title: string;
-  sections: Section[];
-};
+import { Newsletter, buildEmail, emailHead } from "./generic";
 
 const newsletter2: Newsletter = {
   title: "Reflexiones y Prácticas Estoicas para la Vida Diaria",
@@ -32,32 +24,12 @@ const newsletter2: Newsletter = {
 export function renderNewsletter(newsletter: Newsletter = newsletter2) {
   const { title, sections } = newsletter;
 
-  const htmlContent = sections
-    .map(
-      (section) => `
-        <section style="margin-bottom: 20px;">
-            <h2>${section.title}</h2>
-            <p style="white-space: pre-wrap;">${section.content}</p>
-        </section>
-    `
-    )
-    .join("");
+  const htmlContent = buildEmail(sections);
 
   return `
         <!DOCTYPE html>
         <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>${title}</title>
-            <style>
-                body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6 }
-                h1 { color: #222; }
-                h2 { color: #222; }
-                p { margin: 10px 0; font-size: 16px }
-                #container { max-width:700px; margin: 0 auto;}
-            </style>
-        </head>
+        ${emailHead(title)}
         <body>
             <div id="container">
             <h1>${title}</h1>

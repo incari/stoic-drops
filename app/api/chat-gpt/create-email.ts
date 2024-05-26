@@ -3,7 +3,7 @@ import OpenAI from "openai";
 import { newsletterPrompt } from "../../utils/chatgpt/prompts";
 import { getRandomQuote } from "../../utils/chatgpt/quotes";
 
-const model: ChatModel = "gpt-3.5-turbo";
+const model: ChatModel = "gpt-4o"; //"gpt-3.5-turbo";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -25,17 +25,18 @@ function extractJsonContent(input: string): string {
 
 const createEmail = async ({ language }: { language: string }) => {
   const body = newsletterPrompt(getRandomQuote(), language);
-
+  console.log(body);
   const completion = await openai.chat.completions.create({
     model,
     messages: [{ role: "user", content: body }],
+    /*
     temperature: 0.5,
-    /*max_tokens: 400,
+    max_tokens: 400,
      */
   });
 
   const res = (await completion.choices[0].message.content) || "";
-
+  console.log(res);
   const parse = JSON.parse(extractJsonContent(res));
   try {
     return parse;

@@ -17,10 +17,15 @@ const footer = `
        `;
 
 const newsletterPrompt = (quote: string, language: string) => {
+  console.log(language);
   return `
+
+- The words enclosed by [] are variables. 
 - Act as a copywriter and expert in the psychology of habits to develop a newsletter
  that inspires and motivates subscribers to live a more intentional and fulfilling life.
   Specifically in the realm of Stoic philosophy.
+
+- The newsletter will be wrote in the following language enclosed by [] on the ISO 639-1 code format: [${language}] 
 
 - Use the following quote to generate the content enclosed by []: [${quote}]
 
@@ -39,8 +44,6 @@ they daily live to practice the stoicism.
  more relatable and actionable.
 
  - Add this the content enclosed by [] as footer section but using {"Stay Stoic, Stay Resilient.} as title of that section: [${footer}]
-
-- Translate the entire content to the following language given  by the ISO 639-1 code: ${language}
 
 - Return a JSON file with HTML in the following structure:
 

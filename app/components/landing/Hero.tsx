@@ -1,91 +1,57 @@
-"use client";
-import { eventNames } from "process";
-import { FormEvent, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useState, useRef, useEffect } from "react";
+import SignUp from "./SignUp";
+import { UserInfoForm } from "./UserInfoForm";
+import { TransitionOverlay } from "./TransitionOverlay";
+import "./style.css";
 
-export const Hero = () => {
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
-  const t = useTranslations();
+const Hero: React.FC = () => {
+  const [showSignUp, setShowSignUp] = useState(true);
+  const [transitioning, setTransitioning] = useState(false);
+  const [transitionDirection, setTransitionDirection] = useState<
+    "forward" | "backward"
+  >("forward");
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const validateEmail = (email: string) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const handleTransition = (direction: "forward" | "backward") => {
+    setTransitionDirection(direction);
+    setTransitioning(true);
   };
 
-  const handleSubmit = async (event: FormEvent) => {
-    // TODO Give feedback to user when loading
+  const handleAnimationEnd = () => {
+    setTransitioning(false);
+    setShowSignUp(transitionDirection === "backward");
+  };
 
-    event.preventDefault();
-
-    if (validateEmail(email)) {
-      setError("");
-      try {
-        const response = await fetch("/api/subscribe", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email }),
-        });
-
-        if (response.ok) {
-          const res = await response.json();
-          console.log(res.message);
-          // TODO Give feedback to user when success
-        } else {
-          const res = await response.json();
-          throw new Error(res.error);
-        }
-      } catch (error: any) {
-        // TODO Give feedback to user fail
-        console.log("My error", error);
-      }
+  useEffect(() => {
+    if (containerRef.current) {
+      const container = containerRef.current;
+      const height = container.scrollHeight;
+      container.style.height = `${height}px`;
     }
-  };
-
-  const handleChange = (value: string) => {
-    setEmail(value);
-    setError("");
-  };
+  }, [showSignUp]);
 
   return (
     <section className="w-full max-w-screen-lg m-auto">
-      <div className="text-center py-10 px-4 flex flex-col">
-        <div className="py-10">
-          <h1 className="py-3 text-6xl font-bold">{t("hero.title")}</h1>
-          <p className="text-lg">{t("hero.subtitle")}</p>
-        </div>
-
-        <div className="max-w-md w-full p-2 m-auto">
-          <form
-            onSubmit={handleSubmit}
-            className="flex flex-col w-full pb-3 color-black font-bold"
-          >
-            <input
-              id="email"
-              className="hover:shadow-input p-4 border-4 border-black"
-              placeholder="maurelius@meditations.rome"
-              type="email"
-              onChange={(e) => handleChange(e.target.value)}
-              value={email}
-              required
+      <div className="text-center py-10 px-4 flex flex-col relative">
+        <div
+          className="component-container"
+          ref={containerRef}
+        >
+          {showSignUp ? (
+            <SignUp onComplete={() => handleTransition("forward")} />
+          ) : (
+            <UserInfoForm onComplete={() => handleTransition("backward")} />
+          )}
+          {transitioning && (
+            <TransitionOverlay
+              onAnimationEnd={handleAnimationEnd}
+              direction={transitionDirection}
             />
-            <div className="text-left my-2 text-sm text-red-600">
-              &nbsp;{error}
-            </div>
-
-            <button
-              type="submit"
-              className="p-5 border-4 border-black shadow-button hover:shadow-button-hover hover:-translate-y-0.5"
-            >
-              {t("hero.subscribe_now")}
-            </button>
-          </form>
-          <p className="text-xs text-gray-500 dark:text-gray-400">
-            {t("hero.join_community")}
-          </p>
+          )}
         </div>
       </div>
     </section>
   );
 };
+
+export { Hero };

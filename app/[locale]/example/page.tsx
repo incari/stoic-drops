@@ -1,10 +1,9 @@
 // pages/newsletter.tsx
 
 import { createEmail } from "../../api/chat-gpt/create-email";
-import {
-  Newsletter,
-  renderNewsletter,
-} from "../../components/email-templates/basic";
+import { Newsletter } from "../../components/email-templates/generic";
+import { renderNewsletter } from "../../components/email-templates/newsletter";
+import { renderWelcomeEmail } from "../../components/email-templates/welcome";
 
 async function Page() {
   const language = "de";
@@ -26,13 +25,12 @@ const NewsletterPage = ({
   language: string;
 }) => {
   const htmlContent = renderNewsletter(content);
-
+  const welcome = renderWelcomeEmail("Martin");
   return (
     <>
-      <div>Example on: {language}</div>
       <div
         style={{ maxWidth: "700px", margin: "auto" }}
-        dangerouslySetInnerHTML={{ __html: htmlContent }}
+        dangerouslySetInnerHTML={{ __html: welcome }}
       />
     </>
   );
