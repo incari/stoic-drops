@@ -2,6 +2,14 @@
 # yarn lockfile v1
 
 
+"@ai-sdk/google@^0.0.15":
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/@ai-sdk/google/-/google-0.0.15.tgz#8502071087d4f8e0f18b285c309c1c300d084bb4"
+  integrity sha512-7om08+QvjYk7YyQU/4PolRNLGkDntWoGwKWTtHk4C9AFz1weSA+j1g4EtGyOKX2xCTA3DfQDtzlKbfy3HUDNmw==
+  dependencies:
+    "@ai-sdk/provider" "0.0.6"
+    "@ai-sdk/provider-utils" "0.0.9"
+
 "@ai-sdk/openai@^0.0.14":
   version "0.0.14"
   resolved "https://registry.yarnpkg.com/@ai-sdk/openai/-/openai-0.0.14.tgz#c76a73fd4197ea19809bd415579e798897221d46"

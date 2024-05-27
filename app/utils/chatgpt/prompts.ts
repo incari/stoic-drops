@@ -16,8 +16,60 @@ const footer = `
   <p>Remember, "The happiness of your life depends upon the quality of your thoughts." – Marcus Aurelius</p>
        `;
 
+export const newsletterPromptV2 = (quote: string, lang: string) => {
+  return `
+
+Please generate a Stoic philosophy newsletter based on the following structure:
+
+
+Quote: ${quote}
+language: ${lang}
+
+Story:
+
+It should be about a person learning to apply the wisdom of the provided quote.
+The story should begin with the person facing problems due to the lack of application of the quote's wisdom.
+Then, the person discovers the quote and Stoic philosophy and decides to apply that wisdom in their daily life.
+The person applies this wisdom in their daily life, practicing self-reflection and learning to manage their actions and 
+thoughts according to the quote.
+The story ends with the person achieving significant improvement in their life thanks to applying the quote's wisdom.
+
+Listicle:
+
+Include 3 to 5 practical tips for readers to apply the wisdom of the quote in their lives.
+The tips should be clear, concise, and directly applicable to daily life.
+The newsletter should be engaging and useful, helping readers overcome a specific problem and achieve 
+a specific desire related to the provided quote. 
+All content should be in the specified language (ISO code: [ISO code]).
+
+Example structure:
+
+[Main topic related to the quote]
+[Title of the story]
+[Include the story here]
+
+[Applying the wisdom of the quote]
+[Tip 1]
+[Tip 2]
+[Tip 3]
+
+
+- Return a JSON file with HTML in the following structure:
+
+type Section = {
+  title: string;
+  content: string;
+};
+
+export type Newsletter = {
+  title: string;
+  sections: Section[];
+};
+
+`;
+};
+
 const newsletterPrompt = (quote: string, language: string) => {
-  console.log(language);
   return `
 
 - The words enclosed by [] are variables. 
