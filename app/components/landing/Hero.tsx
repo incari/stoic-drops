@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import SignUp from "./SignUp";
+import { SignUp } from "./SignUp";
 import { UserInfoForm } from "./UserInfoForm";
 import { TransitionOverlay } from "./TransitionOverlay";
 import "./style.css";
@@ -21,7 +21,6 @@ const Hero: React.FC = () => {
     setTransitioning(false);
     setShowSignUp(transitionDirection === "backward");
   };
-
   useEffect(() => {
     if (containerRef.current) {
       const container = containerRef.current;
@@ -33,15 +32,19 @@ const Hero: React.FC = () => {
   return (
     <section className="w-full max-w-screen-lg m-auto">
       <div className="text-center py-10 px-4 flex flex-col relative">
+        <SignUp />
+
         <div
           className="component-container"
           ref={containerRef}
         >
-          {showSignUp ? (
+          {/* 
+     TODO review with advanced validations and transitions
+     {showSignUp ? (
             <SignUp onComplete={() => handleTransition("forward")} />
           ) : (
             <UserInfoForm onComplete={() => handleTransition("backward")} />
-          )}
+          )} */}
           {transitioning && (
             <TransitionOverlay
               onAnimationEnd={handleAnimationEnd}

@@ -1,4 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import InputLabel from "./InputLabel";
+import Button from "./Button";
 
 interface FormData {
   name: string;
@@ -15,7 +17,11 @@ export const UserInfoForm = ({ onComplete }: { onComplete: () => void }) => {
     language: "",
   });
 
-  const [error, setError] = useState<string>("");
+  const disableButton = !Object.values(formData).some(
+    (value) => value !== "" && value !== undefined
+  );
+
+  console.log(disableButton);
 
   const handleChange = (field: keyof FormData, value: string) => {
     setFormData({ ...formData, [field]: value });
@@ -23,8 +29,8 @@ export const UserInfoForm = ({ onComplete }: { onComplete: () => void }) => {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    onComplete();
     // Add your form submission logic here
+    onComplete();
   };
 
   return (
@@ -41,9 +47,13 @@ export const UserInfoForm = ({ onComplete }: { onComplete: () => void }) => {
           onSubmit={handleSubmit}
           className="flex flex-col w-full pb-3 color-black font-bold"
         >
+          <InputLabel
+            label="Name"
+            displayLabel
+          />
           <input
             id="name"
-            className="hover:shadow-input p-4 border-4 border-black"
+            className="hover:shadow-input p-4 border-4 border-black mb-2 focus:shadow-input"
             placeholder="Name"
             type="text"
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -52,13 +62,15 @@ export const UserInfoForm = ({ onComplete }: { onComplete: () => void }) => {
             value={formData.name}
             //required
           />
-          <div className="text-left my-2 text-sm text-red-600">
-            &nbsp;{error}
-          </div>
+
+          <InputLabel
+            label="Age"
+            displayLabel
+          />
 
           <input
             id="age"
-            className="hover:shadow-input p-4 border-4 border-black"
+            className="hover:shadow-input p-4 border-4 border-black mb-2 focus:shadow-input"
             placeholder="Age"
             type="number"
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -67,13 +79,15 @@ export const UserInfoForm = ({ onComplete }: { onComplete: () => void }) => {
             value={formData.age}
             //required
           />
-          <div className="text-left my-2 text-sm text-red-600">
-            &nbsp;{error}
-          </div>
+
+          <InputLabel
+            label="Language"
+            displayLabel
+          />
 
           <select
             id="language"
-            className="hover:shadow-input p-4 border-4 border-black"
+            className="hover:shadow-input p-4 border-4 border-black mb-2 focus:shadow-input"
             onChange={(e: ChangeEvent<HTMLSelectElement>) =>
               handleChange("language", e.target.value)
             }
@@ -90,16 +104,14 @@ export const UserInfoForm = ({ onComplete }: { onComplete: () => void }) => {
             <option value="Latin">Latin</option>
             <option value="Greek">Greek</option>
           </select>
-          <div className="text-left my-2 text-sm text-red-600">
-            &nbsp;{error}
-          </div>
 
-          <button
+          <Button
             type="submit"
-            className="p-5 border-4 border-black shadow-button hover:shadow-button-hover hover:-translate-y-0.5"
+            className="mt-6"
+            disable={disableButton}
           >
             Save
-          </button>
+          </Button>
         </form>
       </div>
     </section>

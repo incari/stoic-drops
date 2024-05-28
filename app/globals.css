@@ -21,3 +21,11 @@
     text-wrap: balance;
   }
 }
+
+
+/* Remove focus color on Inputs. */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}

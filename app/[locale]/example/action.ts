@@ -23,8 +23,8 @@ const NewsletterSchema = z.object({
 export type Newsletter = z.infer<typeof NewsletterSchema>;
 
 export const generateNewsletter = async (): Promise<Newsletter> => {
-  const prompt = newsletterPromptV2(getRandomQuote(), "kr");
-  console.log(prompt);
+  const prompt = newsletterPromptV2(getRandomQuote(), "en");
+
   const { object: newsletter } = await generateObject({
     model: openai("gpt-4o"),
     /*

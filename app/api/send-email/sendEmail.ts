@@ -18,7 +18,7 @@ export async function sendEmails(emails: string[]): Promise<void> {
     };
 
     try {
-      await sendgrid.send(message);
+      //   await sendgrid.send(message);
       console.log(`Email sent to ${email}`); // Optional: Log success for each email
     } catch (error) {
       console.error(`Failed to send email to ${email}`, error); // Log errors for each failed attempt

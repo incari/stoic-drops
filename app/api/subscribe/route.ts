@@ -5,6 +5,11 @@ const config = {
   authToken: process.env.TURSO_AUTH_TOKEN || "",
 };
 
+export interface ErrorRes extends Error {
+  message: string;
+  code?: string;
+}
+
 export async function POST(req: Request) {
   const db = createClient(config);
 
@@ -18,19 +23,40 @@ export async function POST(req: Request) {
       }
 
       await db.execute({
-        sql: "INSERT INTO Customers (Email) VALUES (?)",
+        sql: "INSERT INTO users (Email) VALUES (?)",
         args: [email],
       });
 
-      return Response.json({
-        message: "You have successfully subscribed with your email!",
-      });
+      return new Response(
+        JSON.stringify({
+          message: "You have successfully subscribed with your email!",
+        }),
+        { status: 200 }
+      );
     }
   } catch (error: any) {
-    return new Response(JSON.stringify({ error: error.message }), {
-      status: 501,
-    });
+    if (error instanceof Error) {
+      console.log(error.message);
+      if (error?.message.includes("UNIQUE constraint failed: users.email")) {
+        return new Response(
+          JSON.stringify({ error: "This email already exists." }),
+          { status: 409 } // Use 409 Conflict for existing resource
+        );
+      }
+      return new Response(
+        JSON.stringify({
+          error: "Something went wrong, please try again.",
+        }),
+        { status: 500 }
+      );
+    } else {
+      console.error("Unknown error occurred:", error);
+      return new Response(
+        JSON.stringify({
+          error: "An unknown error occurred, please try again.",
+        }),
+        { status: 500 }
+      );
+    }
   }
-
-  return new Response(null, { status: 405 });
 }

@@ -24,7 +24,7 @@ export async function GET(req: Request) {
     return Response.json(customers.rows);
   } catch (error: any) {
     return new Response(JSON.stringify({ error: error.message }), {
-      status: 501,
+      status: 500,
     });
   }
 
