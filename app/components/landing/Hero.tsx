@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { SignUp } from "./SignUp";
-import { UserInfoForm } from "./UserInfoForm";
+//import { UserInfoForm } from "./UserInfoForm";
 import { TransitionOverlay } from "./TransitionOverlay";
-import "./style.css";
+import "../../styles/style-hero.css";
 
 const Hero: React.FC = () => {
   const [showSignUp, setShowSignUp] = useState(true);

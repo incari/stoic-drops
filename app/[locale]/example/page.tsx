@@ -1,12 +1,12 @@
 "use client";
 
+import { renderEmail } from "../../utils/email-templates/newsletter";
 import { Newsletter, generateNewsletter } from "./action";
 import { useState } from "react";
-import { renderNewsletter } from "../../components/email-templates/newsletter";
 
 export default function Page() {
   const [generation, setGeneration] = useState<Newsletter>();
-  const htmlContent = renderNewsletter(generation);
+  const htmlContent = renderEmail(generation);
 
   return (
     <div className="space-y-4">

@@ -1,6 +1,6 @@
-import { Newsletter, buildEmail, emailHead } from "./generic";
+import { EmailContentType, buildEmail, emailHead } from "./generic";
 
-const newsletter2: Newsletter = {
+const newsletter2: EmailContentType = {
   title: "Reflexiones y Prácticas Estoicas para la Vida Diaria",
   sections: [
     {
@@ -21,7 +21,7 @@ const newsletter2: Newsletter = {
   ],
 };
 
-export function renderNewsletter(newsletter: Newsletter = newsletter2) {
+export function renderEmail(newsletter: EmailContentType = newsletter2) {
   const { title, sections } = newsletter;
 
   const htmlContent = buildEmail(sections);

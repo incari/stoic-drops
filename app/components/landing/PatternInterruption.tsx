@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 export const PatternInterruption: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const t = useTranslations();
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -33,7 +34,7 @@ export const PatternInterruption: React.FC = () => {
   return (
     <div
       ref={ref}
-      className="text-center py-12 px-4"
+      className="text-center py-12 px-4 opacity-0"
     >
       <h2 className="text-3xl font-bold text-gray-800 mb-4">
         {t("why_subscribe.leader_insight")}

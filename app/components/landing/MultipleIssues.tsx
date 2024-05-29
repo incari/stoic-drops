@@ -28,10 +28,12 @@ export const MultipleIssues = () => {
     e.preventDefault();
 
     try {
+      /*   
+   TODO Clean up and simplify landing
       const res = await axios.post("/api/chat-gpt", { lang: locale });
 
       const newContent = JSON.parse(res.data.output.content);
-      setContent((content) => [newContent, ...content]);
+      setContent((content) => [newContent, ...content]); */
     } catch (error) {
       console.error("Error calling API:", error);
     }
@@ -39,14 +41,14 @@ export const MultipleIssues = () => {
 
   return (
     <div className="flex flex-col bg-slate-100 ">
-      <button
+      {/*   <button
         className="
         my-6 m-auto p-5 border-4 border-black shadow-button 
         hover:shadow-button-hover hover:-translate-y-0.5"
         onClick={handleAdd}
       >
         Generate a new example
-      </button>
+      </button> */}
       {content.map((issue, index) => (
         <SampleIssues
           key={index}

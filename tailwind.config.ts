@@ -42,7 +42,7 @@ const config: Config = {
       animation: {
         flicker: "flicker 3s linear infinite",
         shimmer: "shimmer 1.3s linear infinite",
-        fadeIn: "fadeIn 1s ease-in-out",
+        fadeIn: "fadeIn 1s forwards",
       },
       boxShadow: {
         button: "4px 6px 0 0 rgba(0,0,0,0.6)",

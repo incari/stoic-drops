@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import InputLabel from "./InputLabel";
 import Button from "./Button";
 import axios from "axios";
@@ -10,6 +10,7 @@ const SignUp = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [subscriptionSuccess, setSubscriptionSuccess] = useState(false);
   const t = useTranslations();
+  const language = useLocale();
 
   const validateEmail = (email: string) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -23,7 +24,7 @@ const SignUp = () => {
     }
     try {
       setIsLoading(true);
-      await axios.post("/api/subscribe", { email });
+      await axios.post("/api/subscribe", { email, language });
 
       setIsLoading(false);
       setSubscriptionSuccess(true);

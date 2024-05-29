@@ -61,7 +61,7 @@ type Section = {
   content: string;
 };
 
-export type Newsletter = {
+export type EmailContentType = {
   title: string;
   sections: Section[];
 };
@@ -69,15 +69,13 @@ export type Newsletter = {
 `;
 };
 
-const newsletterPrompt = (quote: string, language: string) => {
+const newsletterPrompt = (quote: string) => {
   return `
 
 - The words enclosed by [] are variables. 
 - Act as a copywriter and expert in the psychology of habits to develop a newsletter
  that inspires and motivates subscribers to live a more intentional and fulfilling life.
   Specifically in the realm of Stoic philosophy.
-
-- The newsletter will be wrote in the following language enclosed by [] on the ISO 639-1 code format: [${language}] 
 
 - Use the following quote to generate the content enclosed by []: [${quote}]
 
@@ -104,7 +102,7 @@ type Section = {
   content: string;
 };
 
-export type Newsletter = {
+export type EmailContentType = {
   title: string;
   sections: Section[];
 };

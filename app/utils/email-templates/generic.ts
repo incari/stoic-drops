@@ -3,7 +3,7 @@ type Section = {
   content: string;
 };
 
-type Newsletter = {
+type EmailContentType = {
   title: string;
   sections: Section[];
 };
@@ -36,4 +36,4 @@ const buildEmail = (sections: Array<Section>) =>
     .join("");
 
 export { emailHead, buildEmail };
-export type { Newsletter, Section };
+export type { EmailContentType, Section };

@@ -1,4 +1,7 @@
 import { createClient } from "@libsql/client";
+import { createUser } from "./createUser";
+import { updateUserInfo } from "./updateUserInfo";
+import { sendEmails } from "../../utils/services/sendEmails";
 
 const config = {
   url: process.env.TURSO_DATABASE_URL || "",
@@ -14,33 +17,41 @@ export async function POST(req: Request) {
   const db = createClient(config);
 
   try {
-    if (req.method === "POST") {
-      const { email } = await req.json();
-      if (!email) {
-        return new Response(JSON.stringify({ error: "Email is required" }), {
-          status: 400,
-        });
-      }
+    const { email, language, name, lastName, age } = await req.json();
 
-      await db.execute({
-        sql: "INSERT INTO users (Email) VALUES (?)",
-        args: [email],
+    if (!email) {
+      return new Response(JSON.stringify({ error: "Email is required" }), {
+        status: 400,
       });
-
-      return new Response(
-        JSON.stringify({
-          message: "You have successfully subscribed with your email!",
-        }),
-        { status: 200 }
-      );
     }
+
+    // Create user
+    const customerId = await createUser(db, email);
+
+    // Add new fields if possible
+    await updateUserInfo(db, customerId, language, name, lastName, age);
+
+    // TODO Send welcome newsletter.
+    // sendWelcomeEmail
+    sendEmails([
+      { address: email, type: "welcome" },
+      { address: "ing.racana@gmail.com", type: "daily" },
+    ]);
+
+    return new Response(
+      JSON.stringify({
+        message:
+          "You have successfully subscribed with your email and updated your information!",
+      }),
+      { status: 200 }
+    );
   } catch (error: any) {
     if (error instanceof Error) {
-      console.log(error.message);
       if (error?.message.includes("UNIQUE constraint failed: users.email")) {
         return new Response(
           JSON.stringify({ error: "This email already exists." }),
-          { status: 409 } // Use 409 Conflict for existing resource
+          // 409 for conflict for existing resource
+          { status: 409 }
         );
       }
       return new Response(
@@ -50,7 +61,6 @@ export async function POST(req: Request) {
         { status: 500 }
       );
     } else {
-      console.error("Unknown error occurred:", error);
       return new Response(
         JSON.stringify({
           error: "An unknown error occurred, please try again.",

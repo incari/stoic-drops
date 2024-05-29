@@ -1,6 +1,4 @@
-import { buildEmail, emailHead } from "./generic";
-
-const content = (name?: string) => {
+export const welcomeContent = (name?: string) => {
   return {
     title: "Welcome to Stoic Drops!",
     sections: [
@@ -38,22 +36,3 @@ const content = (name?: string) => {
     ],
   };
 };
-
-export function renderWelcomeEmail(name?: string) {
-  const { title, sections } = content(name);
-
-  const htmlContent = buildEmail(sections);
-
-  return `
-        <!DOCTYPE html>
-        <html lang="en">
-        ${emailHead(title)}
-        <body>
-            <div id="container">
-            <h1>${title}</h1>
-            ${htmlContent}
-            </div>
-        </body>
-        </html>
-    `;
-}
