@@ -1,4 +1,6 @@
-export const welcomeContent = (name?: string) => {
+import { Newsletter } from "../../../utils/supabase/services/zodSchema";
+
+export const welcomeContent = (name?: string): Newsletter => {
   return {
     title: "Welcome to Stoic Drops!",
     sections: [

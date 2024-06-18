@@ -21,8 +21,6 @@ export const UserInfoForm = ({ onComplete }: { onComplete: () => void }) => {
     (value) => value !== "" && value !== undefined
   );
 
-  console.log(disableButton);
-
   const handleChange = (field: keyof FormData, value: string) => {
     setFormData({ ...formData, [field]: value });
   };

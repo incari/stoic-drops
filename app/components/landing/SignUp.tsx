@@ -5,7 +5,7 @@ import Button from "./Button";
 import axios from "axios";
 
 const SignUp = () => {
-  const [email, setEmail] = useState("");
+  const [emailAddress, setEmailAddress] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [subscriptionSuccess, setSubscriptionSuccess] = useState(false);
@@ -18,18 +18,18 @@ const SignUp = () => {
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
-    if (!validateEmail(email)) {
+    if (!validateEmail(emailAddress)) {
       setError("Should be a valid email");
       return;
     }
     try {
       setIsLoading(true);
-      await axios.post("/api/subscribe", { email, language });
+      await axios.post("/api/subscribe", { emailAddress, language });
 
       setIsLoading(false);
       setSubscriptionSuccess(true);
       // Cleaning state after success
-      setEmail("");
+      setEmailAddress("");
       setTimeout(() => {
         setSubscriptionSuccess(false);
       }, 3000);
@@ -44,7 +44,7 @@ const SignUp = () => {
   };
 
   const handleChange = (value: string) => {
-    setEmail(value);
+    setEmailAddress(value);
     setError("");
   };
 
@@ -60,8 +60,8 @@ const SignUp = () => {
           className="flex flex-col w-full pb-3 color-black font-bold"
         >
           <InputLabel
-            label="Your email"
-            displayLabel={Boolean(email.length)}
+            label={t("input.email_label") || "Your email"}
+            displayLabel={Boolean(emailAddress.length)}
           />
           <input
             id="email"
@@ -69,7 +69,7 @@ const SignUp = () => {
             placeholder="maurelius@meditations.rome"
             type="email"
             onChange={(e) => handleChange(e.target.value)}
-            value={email}
+            value={emailAddress}
             required
           />
           <div className="text-left my-2 text-sm text-red-600">

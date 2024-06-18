@@ -1,14 +1,37 @@
 import { ChatModel } from "openai/resources/index.mjs";
 import OpenAI from "openai";
-import { newsletterPrompt } from "../chatgpt/prompts";
+import { newsletterPrompt, newsletterPromptV2 } from "../chatgpt/prompts";
 import { getRandomQuote } from "../chatgpt/quotes";
 import { welcomeContent } from "../email-templates/welcome";
+import { google } from "@ai-sdk/google";
+import { generateObject } from "ai";
+import { NewsletterSchema } from "@/utils/supabase/services/zodSchema";
 
-const model: ChatModel = "gpt-3.5-turbo"; //"gpt-4o"; //
+/* const model: ChatModel = "gpt-3.5-turbo"; //"gpt-4o"; //
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
-});
+}); */
+/*
+
+  const completion = await openai.chat.completions.create({
+    model,
+    messages: [
+      { role: "assistant", content: body },
+      {
+        role: "assistant",
+        content: `
+          Translate it to the language enclosed by [] on the ISO 639-1 code format: [${language}] `,
+      },
+    ],
+    
+    temperature: 0.5,
+    max_tokens: 400,
+   
+    });
+    
+    const res = (await completion.choices[0].message.content) || "";
+   
 
 function extractJsonContent(input: string): string {
   // Define a regular expression to match JSON content.
@@ -23,74 +46,52 @@ function extractJsonContent(input: string): string {
 
   return input;
 }
-
+ */
 type Props = {
   language?: string;
 };
 
 const createNewsletterContent = async ({ language = "en" }: Props) => {
-  const body = newsletterPrompt(getRandomQuote());
+  // const body = newsletterPrompt(getRandomQuote());
 
-  const completion = await openai.chat.completions.create({
-    model,
-    messages: [
-      { role: "assistant", content: body },
-      {
-        role: "assistant",
-        content: `
-          Translate it to the language enclosed by [] on the ISO 639-1 code format: [${language}] `,
-      },
-    ],
-    /*
-    temperature: 0.5,
-    max_tokens: 400,
-     */
-  });
+  const prompt = newsletterPromptV2(getRandomQuote(), language);
 
-  const res = (await completion.choices[0].message.content) || "";
-
-  const parse = JSON.parse(extractJsonContent(res));
   try {
-    return parse;
-  } catch (error) {
-    console.error("Error parsing JSON:", error);
-  }
+    const { object: newsletter } = await generateObject({
+      model: google("models/gemini-1.5-pro-latest"),
+      temperature: 0.5,
+      prompt,
+      schema: NewsletterSchema,
+    });
 
-  return {};
+    return newsletter;
+  } catch (error) {
+    console.error("Error creating the email:", error);
+  }
 };
 
 const createWelcomeEmailContent = async ({ language = "en" }: Props) => {
   // Return the english content directly.
-  if (language === "en") {
+  /*   if (language === "en") {
     return welcomeContent;
-  }
+  } */
 
-  // Else translate it.
-  const completion = await openai.chat.completions.create({
-    model,
-    messages: [
-      {
-        role: "assistant",
-        content: `
-          ${welcomeContent}
-          Translate it to the language enclosed by [] on the ISO 639-1 code format: [${language}] `,
-      },
-    ],
-    /*
-    temperature: 0.5,
-    max_tokens: 400,
-     */
-  });
-  const res = (await completion.choices[0].message.content) || "";
+  const prompt = `
+  ${welcomeContent}
+  Translate it to the language enclosed by [] on the ISO 639-1 code format: [${language}] `;
 
-  const parse = JSON.parse(extractJsonContent(res));
   try {
-    return parse;
+    const { object: newsletter } = await generateObject({
+      model: google("models/gemini-1.5-pro-latest"),
+      temperature: 0.5,
+      prompt,
+      schema: NewsletterSchema,
+    });
+
+    return newsletter;
   } catch (error) {
     console.error("Error parsing JSON:", error);
   }
-
-  return {};
 };
 
 export { createNewsletterContent, createWelcomeEmailContent };

@@ -5,22 +5,24 @@ import {
 import { EmailContentType } from "../email-templates/generic";
 import { renderEmail } from "../email-templates/newsletter";
 import { EmailDetails, EmailType } from "./sendEmails";
+import { Newsletter } from "../../../utils/supabase/services/zodSchema";
 
 export async function buildEmail(
   type: EmailType,
   language?: string
 ): Promise<EmailDetails> {
   if (type === "welcome") {
-    const content: EmailContentType = await createWelcomeEmailContent({
+    const content: Newsletter | undefined = await createWelcomeEmailContent({
       language,
     });
+
     return {
       htmlContent: renderEmail(content),
       subject: "✨ Welcome to Your Journey!",
     };
   }
   if (type === "daily") {
-    const content: EmailContentType = await createNewsletterContent({
+    const content: Newsletter | undefined = await createNewsletterContent({
       language,
     });
     return {

@@ -1,4 +1,6 @@
-export const createUser = async (db: any, email: string) => {
+import { db } from "../dbClient";
+
+export const createUser = async (email: string) => {
   await db.execute({
     sql: "INSERT INTO users (email) VALUES (?)",
     args: [email],

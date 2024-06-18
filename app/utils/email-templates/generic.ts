@@ -3,10 +3,12 @@ type Section = {
   content: string;
 };
 
-type EmailContentType = {
-  title: string;
-  sections: Section[];
-};
+type EmailContentType =
+  | {
+      title: string;
+      sections: Section[];
+    }
+  | undefined;
 
 const emailHead = (title: string) => {
   return `<head>
