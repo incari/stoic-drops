@@ -1,6 +1,7 @@
+import { Newsletter } from "@/utils/supabase/services/zodSchema";
 import { EmailContentType, buildEmail, emailHead } from "./generic";
 
-const newsletter2: EmailContentType = {
+const newsletter2: Newsletter = {
   title: "Reflexiones y Prácticas Estoicas para la Vida Diaria",
   sections: [
     {

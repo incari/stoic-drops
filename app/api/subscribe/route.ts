@@ -30,12 +30,22 @@ export async function POST(req: Request) {
  */
     if (error) {
       console.error("Error inserting data:", error);
-      return null;
+      return new Response(
+        JSON.stringify({
+          error: "Something went wrong, please try again.",
+        }),
+        { status: 500 }
+      );
     }
 
     if (!data || data.length === 0) {
       console.error("No data returned");
-      return null;
+      return new Response(
+        JSON.stringify({
+          error: "Something went wrong, please try again.",
+        }),
+        { status: 500 }
+      );
     }
     const [{ user_id: userId }] = data;
 
